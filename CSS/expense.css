@@ -1,0 +1,423 @@
+/* 
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f5f5f5;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .input-section, .graph-section {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        input, select, button {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .time-filters {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .time-filters button {
+            width: auto;
+            margin: 0 5px;
+        }
+
+        .summary {
+            margin-top: 20px;
+        }
+
+        canvas {
+            max-height: 400px;
+        } */
+    
+
+        /* //---------------------- */ 
+        /* body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f5f5f5;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .input-section, .graph-section {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        input, select, button {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .time-filters {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .time-filters button {
+            width: auto;
+            margin: 0 5px;
+        }
+
+        .summary {
+            margin-top: 20px;
+        }
+
+        canvas {
+            max-height: 400px;
+        }
+
+       
+
+        canvas {
+            max-height: 400px;
+            margin-bottom: 30px;
+        }
+        
+
+
+
+        .graph-section {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+        
+        .chart-container {
+            position: relative;
+            height: 400px;
+            width: 100%;
+        }
+        
+        canvas {
+            max-height: 400px !important;
+            width: 100% !important;
+            height: auto !important;
+        } */
+
+        /* ------------------ */
+
+
+        /* Main Styles */
+:root {
+    --primary: #4361ee;
+    --primary-hover: #3a56d4;
+    --success: #10b981;
+    --danger: #ef4444;
+    --light-bg: #f9fafb;
+    --dark-text: #1f2937;
+    --card-bg: #ffffff;
+    --border-radius: 12px;
+    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --transition: all 0.3s ease;
+  }
+  
+  body {
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--light-bg);
+    color: var(--dark-text);
+    line-height: 1.6;
+  }
+  
+  /* Container and Layout */
+  .container {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 30px;
+    max-width: 1400px;
+    margin: 40px auto;
+    padding: 0 20px;
+  }
+  
+  @media (max-width: 1024px) {
+    .container {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  .header {
+    grid-column: 1 / -1;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--primary);
+  }
+  
+  .header p {
+    color: #6b7280;
+    font-size: 1.1rem;
+  }
+  
+  /* Cards */
+  .input-section, .graph-section {
+    background: var(--card-bg);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    padding: 30px;
+    height: fit-content;
+  }
+  
+  .input-section h2, .graph-section h3 {
+    color: var(--primary);
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    border-bottom: 2px solid #f3f4f6;
+    padding-bottom: 12px;
+  }
+  
+  /* Form Elements */
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #4b5563;
+  }
+  
+  input, select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 1rem;
+    transition: var(--transition);
+  }
+  
+  input:focus, select:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.2);
+  }
+  
+  button {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: var(--transition);
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  button:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-1px);
+  }
+  
+  /* Time Filters */
+  .time-filters {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 30px 0;
+    flex-wrap: wrap;
+  }
+  
+  .time-filters button {
+    width: auto;
+    padding: 10px 20px;
+    background-color: #e5e7eb;
+    color: #4b5563;
+  }
+  
+  .time-filters button:hover,
+  .time-filters button.active {
+    background-color: var(--primary);
+    color: white;
+  }
+  
+  .time-filters button.danger {
+    background-color: var(--danger);
+    color: white;
+  }
+  
+  .time-filters button.danger:hover {
+    background-color: #dc2626;
+  }
+  
+  /* Summary Section */
+  .summary {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #f3f4f6;
+    border-radius: 8px;
+  }
+  
+  .summary h3 {
+    margin-top: 0;
+    color: var(--dark-text);
+    font-size: 1.2rem;
+  }
+  
+  .summary-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+  }
+  
+  .summary-income {
+    color: var(--success);
+  }
+  
+  .summary-expense {
+    color: var(--danger);
+  }
+  
+  .summary-balance {
+    font-weight: 600;
+    font-size: 1.3rem;
+  }
+  
+  /* Transaction List */
+  .transaction-list {
+    margin-top: 30px;
+    max-height: 300px;
+    overflow-y: auto;
+  }
+  
+  .transaction {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    border-bottom: 1px solid #e5e7eb;
+  }
+  
+  .transaction-info {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .transaction-date {
+    font-size: 0.85rem;
+    color: #6b7280;
+  }
+  
+  .transaction-amount {
+    font-weight: 600;
+  }
+  
+  .income-amount {
+    color: var(--success);
+  }
+  
+  .expense-amount {
+    color: var(--danger);
+  }
+  
+  /* Graph Section */
+  .graph-section {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+  
+  .chart-container {
+    position: relative;
+    height: 300px;
+    width: 100%;
+  }
+  
+  canvas {
+    max-height: 300px !important;
+    width: 100% !important;
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+    .container {
+      padding: 15px;
+      margin: 20px auto;
+      gap: 20px;
+    }
+    
+    .input-section, .graph-section {
+      padding: 20px;
+    }
+    
+    .time-filters button {
+      padding: 8px 15px;
+      font-size: 0.9rem;
+    }
+    
+    .chart-container {
+      height: 250px;
+    }
+    
+    canvas {
+      max-height: 250px !important;
+    }
+  }
